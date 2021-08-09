@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:3000/? -->
+<html lang="en" class="js-focus-visible" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Breaking Bad API</title>
+  <style>@media print {#ghostery-tracker-tally {display:none !important}}</style><style>* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #000 url(/static/media/bg.085908ea.jpg) no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #3fb573;
+  font-size: 1em;
+  text-align: center;
+  padding: 10px 15px;
+  border: 0;
+  margin: 10px 0;
+}
+
+header {
+  height: 200px;
+}
+
+header img {
+  width: 200px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  height: 100px;
+}
+
+input[type='text'] {
+  display: block;
+  padding: 10px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  width: 60%;
+  margin: auto;
+  outline: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.card {
+  cursor: pointer;
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card h1 {
+  font-size: 25px;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvQXBwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFzQjtFQUN0QixTQUFTO0VBQ1QsVUFBVTtBQUNaOztBQUVBOztFQUVFLHNGQUFnRTtFQUNoRSxhQUFhO0VBQ2IsV0FBVztFQUNYLHlDQUF5QztBQUMzQzs7QUFFQTtFQUNFLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixXQUFXO0VBQ1gseUJBQXlCO0VBQ3pCLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7QUFDekI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsYUFBYTtFQUNiLGVBQWU7RUFDZixTQUFTO0VBQ1Qsa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixZQUFZO0VBQ1osYUFBYTtBQUNmOztBQUVBO0VBQ0UsYUFBYTtFQUNiLHFDQUFxQztFQUNyQyxjQUFTO0VBQVQsU0FBUztBQUNYOztBQUVBO0VBQ0UsZUFBZTtFQUNmLDZCQUE2QjtFQUM3QixhQUFhO0VBQ2IsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLDZCQUE2QjtFQUM3QixvQkFBb0I7RUFDcEIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsV0FBVztFQUNYLGFBQWE7RUFDYixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFlBQVk7RUFDWiwwQkFBMEI7RUFDMUIsNEJBQTRCO0FBQzlCOztBQUVBO0VBQ0UsMEJBQTBCO0FBQzVCOztBQUVBOztFQUVFLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsWUFBWTtFQUNaLG1DQUFtQztFQUNuQywyQkFBMkI7QUFDN0I7O0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLGFBQWE7RUFDYiwwQkFBMEI7QUFDNUI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsb0JBQW9CO0FBQ3RCOztBQUVBO0VBQ0U7SUFDRSxxQ0FBcUM7RUFDdkM7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsMEJBQTBCO0VBQzVCO0VBQ0E7SUFDRSxXQUFXO0lBQ1gsYUFBYTtJQUNiLG1CQUFtQjtFQUNyQjtBQUNGIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbn1cblxuaHRtbCxcbmJvZHkge1xuICBiYWNrZ3JvdW5kOiAjMDAwIHVybCgnaW1nL2JnLmpwZycpIG5vLXJlcGVhdCBjZW50ZXIgY2VudGVyL2NvdmVyO1xuICBoZWlnaHQ6IDEwMHZoO1xuICBjb2xvcjogI2ZmZjtcbiAgZm9udC1mYW1pbHk6IEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7XG59XG5cbmEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbi5jb250YWluZXIge1xuICBtYXgtd2lkdGg6IDExMDBweDtcbiAgbWFyZ2luOiBhdXRvO1xuICBwYWRkaW5nOiAwIDIwcHg7XG59XG5cbi5idG4ge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGNvbG9yOiAjZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjM2ZiNTczO1xuICBmb250LXNpemU6IDFlbTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOiAxMHB4IDE1cHg7XG4gIGJvcmRlcjogMDtcbiAgbWFyZ2luOiAxMHB4IDA7XG59XG5cbmhlYWRlciB7XG4gIGhlaWdodDogMjAwcHg7XG59XG5cbmhlYWRlciBpbWcge1xuICB3aWR0aDogMjAwcHg7XG59XG5cbi5jZW50ZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn1cblxuLnNlYXJjaCB7XG4gIGhlaWdodDogMTAwcHg7XG59XG5cbmlucHV0W3R5cGU9J3RleHQnXSB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwYWRkaW5nOiAxMHB4O1xuICBmb250LXNpemU6IDIwcHg7XG4gIGJvcmRlcjogMDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICB3aWR0aDogNjAlO1xuICBtYXJnaW46IGF1dG87XG4gIG91dGxpbmU6IG5vbmU7XG59XG5cbi5jYXJkcyB7XG4gIGRpc3BsYXk6IGdyaWQ7XG4gIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KDQsIDFmcik7XG4gIGdhcDogMXJlbTtcbn1cblxuLmNhcmQge1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICBoZWlnaHQ6IDMwMHB4O1xuICBwZXJzcGVjdGl2ZTogMTAwMHB4O1xufVxuXG4uY2FyZCBoMSB7XG4gIGZvbnQtc2l6ZTogMjVweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4ICNmZmYgc29saWQ7XG4gIHBhZGRpbmctYm90dG9tOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xufVxuXG4uY2FyZCBpbWcge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAzMDBweDtcbiAgb2JqZWN0LWZpdDogY292ZXI7XG59XG5cbi5jYXJkLWlubmVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xuICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC44cztcbiAgdHJhbnNmb3JtLXN0eWxlOiBwcmVzZXJ2ZS0zZDtcbn1cblxuLmNhcmQ6aG92ZXIgLmNhcmQtaW5uZXIge1xuICB0cmFuc2Zvcm06IHJvdGF0ZVkoMTgwZGVnKTtcbn1cblxuLmNhcmQtZnJvbnQsXG4uY2FyZC1iYWNrIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xuICAtd2Via2l0LWJhY2tmYWNlLXZpc2liaWxpdHk6IGhpZGRlbjtcbiAgYmFja2ZhY2UtdmlzaWJpbGl0eTogaGlkZGVuO1xufVxuXG4uY2FyZC1iYWNrIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzMzMztcbiAgY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nOiAyMHB4O1xuICB0cmFuc2Zvcm06IHJvdGF0ZVkoMTgwZGVnKTtcbn1cblxuLmNhcmQgbGkge1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBwYWRkaW5nLWJvdHRvbTogMTBweDtcbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDgwMHB4KSB7XG4gIC5jYXJkcyB7XG4gICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMiwgMWZyKTtcbiAgfVxufVxuXG5AbWVkaWEgKG1heC13aWR0aDogNTAwcHgpIHtcbiAgLmNhcmRzIHtcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmcjtcbiAgfVxuICAuY2FyZCBpbWcge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMzAwcHg7XG4gICAgb2JqZWN0LWZpdDogY29udGFpbjtcbiAgfVxufSJdLCJzb3VyY2VSb290IjoiIn0= */</style><style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="container"><header class="center"><img src="./Breaking Bad API_files/logo.e6ecab44.png" alt=""></header><section class="search"><form><input type="text" class="form-control" placeholder="Search characters" value="assdf"></form></section><section class="cards"><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/cast_bb_700x1000_walter-white-lg.jpg" alt=""></div><div class="card-back"><h1>Walter White</h1><ul><li><strong>Actor Name:</strong> Bryan Cranston</li><li><strong>Nickname:</strong> Heisenberg</li><li><strong>Birthday:</strong> 09-07-1958</li><li><strong>Status:</strong> Presumed dead</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/JesseS5.jpg" alt=""></div><div class="card-back"><h1>Jesse Pinkman</h1><ul><li><strong>Actor Name:</strong> Aaron Paul</li><li><strong>Nickname:</strong> Cap n' Cook</li><li><strong>Birthday:</strong> 09-24-1984</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/o-ANNA-GUNN-facebook.jpg" alt=""></div><div class="card-back"><h1>Skyler White</h1><ul><li><strong>Actor Name:</strong> Anna Gunn</li><li><strong>Nickname:</strong> Sky</li><li><strong>Birthday:</strong> 08-11-1970</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/RJ-Mitte-Walter-White-Jr.jpg" alt=""></div><div class="card-back"><h1>Walter White Jr.</h1><ul><li><strong>Actor Name:</strong> RJ Mitte</li><li><strong>Nickname:</strong> Flynn</li><li><strong>Birthday:</strong> 07-08-1993</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/HankS5.jpg" alt=""></div><div class="card-back"><h1>Henry Schrader</h1><ul><li><strong>Actor Name:</strong> Dean Norris</li><li><strong>Nickname:</strong> Hank</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Season_2_-_Marie.jpg" alt=""></div><div class="card-back"><h1>Marie Schrader</h1><ul><li><strong>Actor Name:</strong> Betsy Brandt</li><li><strong>Nickname:</strong> Marie</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/cast_bb_700x1000_mike-ehrmantraut-lg.jpg" alt=""></div><div class="card-back"><h1>Mike Ehrmantraut</h1><ul><li><strong>Actor Name:</strong> Jonathan Banks</li><li><strong>Nickname:</strong> Mike</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Saul_Goodman.jpg" alt=""></div><div class="card-back"><h1>Saul Goodman</h1><ul><li><strong>Actor Name:</strong> Bob Odenkirk</li><li><strong>Nickname:</strong> Jimmy McGill</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/BCS_S4_Gustavo_Fring.jpg" alt=""></div><div class="card-back"><h1>Gustavo Fring</h1><ul><li><strong>Actor Name:</strong> Giancarlo Esposito</li><li><strong>Nickname:</strong> Gus</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Hector_BCS.jpg" alt=""></div><div class="card-back"><h1>Hector Salamanca</h1><ul><li><strong>Actor Name:</strong> Mark Margolis</li><li><strong>Nickname:</strong> Don Hector</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Krazy8.png" alt=""></div><div class="card-back"><h1>Domingo Molina</h1><ul><li><strong>Actor Name:</strong> Maximino Arciniega</li><li><strong>Nickname:</strong> Krazy-8</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Tuco_BCS.jpg" alt=""></div><div class="card-back"><h1>Tuco Salamanca</h1><ul><li><strong>Actor Name:</strong> Raymond Cruz</li><li><strong>Nickname:</strong> Tuco</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/cast_bb_700x1000_the-cousins-lg.jpg" alt=""></div><div class="card-back"><h1>Marco &amp; Leonel Salamanca</h1><ul><li><strong>Actor Name:</strong> Luis &amp; Daniel Moncada</li><li><strong>Nickname:</strong> The Cousins</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Laura-Fraser-Lydia-Rodarte-Quayle.jpg" alt=""></div><div class="card-back"><h1>Lydia Rodarte-Quayle</h1><ul><li><strong>Actor Name:</strong> Laura Fraser</li><li><strong>Nickname:</strong> Lydia</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Todd_brba5b.png" alt=""></div><div class="card-back"><h1>Todd Alquist</h1><ul><li><strong>Actor Name:</strong> Jesse Plemons</li><li><strong>Nickname:</strong> Ricky Hitler</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Jane.jpg" alt=""></div><div class="card-back"><h1>Jane Margolis</h1><ul><li><strong>Actor Name:</strong> Krysten Ritter</li><li><strong>Nickname:</strong> Apology Girl</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Sp.png" alt=""></div><div class="card-back"><h1>Skinny Pete</h1><ul><li><strong>Actor Name:</strong> Charles Baker</li><li><strong>Nickname:</strong> Skinny</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/cast_bb_700x1000_badger-lg.jpg" alt=""></div><div class="card-back"><h1>Brandon Mayhew</h1><ul><li><strong>Actor Name:</strong> Matt L. Jones</li><li><strong>Nickname:</strong> Badger</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/4x11_-_Huell.png" alt=""></div><div class="card-back"><h1>Huell Babineaux</h1><ul><li><strong>Actor Name:</strong> Lavell Crawford</li><li><strong>Nickname:</strong> Huell</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/cast_bb_700x1000_steven-gomez-lg.jpg" alt=""></div><div class="card-back"><h1>Steven Gomez</h1><ul><li><strong>Actor Name:</strong> Steven Michael Quezada</li><li><strong>Nickname:</strong> Gomie</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Cast_bb_700x1000_todd-beneke-lg.jpg" alt=""></div><div class="card-back"><h1>Theodore Beneke</h1><ul><li><strong>Actor Name:</strong> Christopher Cousins</li><li><strong>Nickname:</strong> Ted</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/cast_bb_700x1000_gale-boetticher-lg.jpg" alt=""></div><div class="card-back"><h1>Gale Boetticher</h1><ul><li><strong>Actor Name:</strong> David Costabile</li><li><strong>Nickname:</strong> GB</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Andrea_-_To&#39;hajilee.png" alt=""></div><div class="card-back"><h1>Andrea Cantillo</h1><ul><li><strong>Actor Name:</strong> Emily Rios</li><li><strong>Nickname:</strong> Andrea</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Brock.png" alt=""></div><div class="card-back"><h1>Brock Cantillo</h1><ul><li><strong>Actor Name:</strong> Ian Posada</li><li><strong>Nickname:</strong> Brock</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Carmen.JPG.jpg" alt=""></div><div class="card-back"><h1>Carmen Molina</h1><ul><li><strong>Actor Name:</strong> Carmen Serano</li><li><strong>Nickname:</strong> Carmen</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Gretchen_Schwartz.png" alt=""></div><div class="card-back"><h1>Gretchen Schwartz</h1><ul><li><strong>Actor Name:</strong> Jessica Hecht</li><li><strong>Nickname:</strong> Gretchen</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Elliott_Schwartz.png" alt=""></div><div class="card-back"><h1>Elliot Schwartz</h1><ul><li><strong>Actor Name:</strong> Adam Godley</li><li><strong>Nickname:</strong> Elliot</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Gonzo.JPG.jpg" alt=""></div><div class="card-back"><h1>Gonzo</h1><ul><li><strong>Actor Name:</strong> Jesus, Payan, Jr.</li><li><strong>Nickname:</strong> Gonzo</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/c8acek3pimb0hb4efrvf.jpg" alt=""></div><div class="card-back"><h1>Christian Ortgea</h1><ul><li><strong>Actor Name:</strong> Rodney Rush</li><li><strong>Nickname:</strong> Combo</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Tess_Harper.jpg" alt=""></div><div class="card-back"><h1>Mrs. Pinkman</h1><ul><li><strong>Actor Name:</strong> Tess Harper</li><li><strong>Nickname:</strong> Jesse's mom</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/AdamPinkman.png" alt=""></div><div class="card-back"><h1>Adam Pinkman</h1><ul><li><strong>Actor Name:</strong> Michael Bofshever</li><li><strong>Nickname:</strong> Jesse's dad</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Jake.jpg" alt=""></div><div class="card-back"><h1>Jake Pinkman</h1><ul><li><strong>Actor Name:</strong> Ben Petry</li><li><strong>Nickname:</strong> Jake</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/No_Doze_2.png" alt=""></div><div class="card-back"><h1>No-Doze</h1><ul><li><strong>Actor Name:</strong> Cesar Garcia</li><li><strong>Nickname:</strong> No-Doze</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Emilio.jpg" alt=""></div><div class="card-back"><h1>Emilio Koyama</h1><ul><li><strong>Actor Name:</strong> John Koyama</li><li><strong>Nickname:</strong> Emilio</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/lj5qlbe6xvmmpxnspz6y.jpg" alt=""></div><div class="card-back"><h1>Dr. Delcavoli</h1><ul><li><strong>Actor Name:</strong> David House</li><li><strong>Nickname:</strong> Dr. Delcavoli</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Wendy.jpg" alt=""></div><div class="card-back"><h1>Wendy S.</h1><ul><li><strong>Actor Name:</strong> Julie Minesci</li><li><strong>Nickname:</strong> Wendy</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/d5c0345ae70fbdbaa33b7537d685da54.jpg" alt=""></div><div class="card-back"><h1>Bogdan Wolynetz</h1><ul><li><strong>Actor Name:</strong> Marius Stan</li><li><strong>Nickname:</strong> Bogdan</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Ken.png" alt=""></div><div class="card-back"><h1>Ken</h1><ul><li><strong>Actor Name:</strong> Kyle Bornheimer</li><li><strong>Nickname:</strong> Ken Wins</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/latest" alt=""></div><div class="card-back"><h1>Holly White</h1><ul><li><strong>Actor Name:</strong> Unknown</li><li><strong>Nickname:</strong> Holly</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/MV5BMTkwMTkxNjUzM15BMl5BanBnXkFtZTgwMTg5MTczMTE@._V1_UY317_CR175,0,214,317_AL_.jpg" alt=""></div><div class="card-back"><h1>George Merkert</h1><ul><li><strong>Actor Name:</strong> Michael Shamus Wiles</li><li><strong>Nickname:</strong> ASAC Merkert</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Donald_Margolis.png" alt=""></div><div class="card-back"><h1>Donald Margolis</h1><ul><li><strong>Actor Name:</strong> John de Lancie</li><li><strong>Nickname:</strong> Jane's dad</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Unknown</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Clovis.JPG.jpg" alt=""></div><div class="card-back"><h1>Clovis</h1><ul><li><strong>Actor Name:</strong> Tom Kiesche</li><li><strong>Nickname:</strong> Clovis</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/o7thsjdorobfbetqaefj.jpg" alt=""></div><div class="card-back"><h1>SAC Ramey</h1><ul><li><strong>Actor Name:</strong> Todd Terry</li><li><strong>Nickname:</strong> SAC Ramey</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Victor2.png" alt=""></div><div class="card-back"><h1>Victor</h1><ul><li><strong>Actor Name:</strong> Jeremiah Bitsui</li><li><strong>Nickname:</strong> Victor</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Tomas.png" alt=""></div><div class="card-back"><h1>Tomás Cantillo</h1><ul><li><strong>Actor Name:</strong> Angelo Martinez</li><li><strong>Nickname:</strong> Andrea's brother</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/o9mstjonfn6dsdi3uij6.jpg" alt=""></div><div class="card-back"><h1>Francesca Liddy</h1><ul><li><strong>Actor Name:</strong> Tina Parker</li><li><strong>Nickname:</strong> Honey Tits</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/z63youp272k5mbqbuqj9.jpg" alt=""></div><div class="card-back"><h1>Cynthia</h1><ul><li><strong>Actor Name:</strong> Ashley Kajiki</li><li><strong>Nickname:</strong> Cynthia</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/BBWA_Tortuga.jpg" alt=""></div><div class="card-back"><h1>Tortuga</h1><ul><li><strong>Actor Name:</strong> Danny Trejo</li><li><strong>Nickname:</strong> Tortuga</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/2x02_-_Tim_Roberts.jpg" alt=""></div><div class="card-back"><h1>Tim Roberts</h1><ul><li><strong>Actor Name:</strong> Nigel Gibbs</li><li><strong>Nickname:</strong> Detective Roberts</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Bolsa.png" alt=""></div><div class="card-back"><h1>Juan Bolsa</h1><ul><li><strong>Actor Name:</strong> Javier Grajeda</li><li><strong>Nickname:</strong> Don Juan</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Group_Leader_Brown_Shirt_-_Kafkaesque.png" alt=""></div><div class="card-back"><h1>Group Leader</h1><ul><li><strong>Actor Name:</strong> Jere Burns</li><li><strong>Nickname:</strong> Counselor</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Kaylee.png" alt=""></div><div class="card-back"><h1>Kaylee Ehrmantraut</h1><ul><li><strong>Actor Name:</strong> Kaija Rose Bales</li><li><strong>Nickname:</strong> Mike's Granddaughter</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/bbb6muek0tcmbc3g2sog.jpg" alt=""></div><div class="card-back"><h1>Pamela</h1><ul><li><strong>Actor Name:</strong> Julie Dretzin</li><li><strong>Nickname:</strong> Skyler's attorney</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/ssk1t4hvo9tmhvdt5hcn.jpg" alt=""></div><div class="card-back"><h1>Duane Chow</h1><ul><li><strong>Actor Name:</strong> James Ning</li><li><strong>Nickname:</strong> Chow</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/StaceyEhrmantraut.png" alt=""></div><div class="card-back"><h1>Stacey Ehrmantraut</h1><ul><li><strong>Actor Name:</strong> Kerry Condon</li><li><strong>Nickname:</strong> Mike's daugter-in-law</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Officer_Saxton_-_I.F.T..png" alt=""></div><div class="card-back"><h1>Officer Saxton</h1><ul><li><strong>Actor Name:</strong> Stoney Westmoreland</li><li><strong>Nickname:</strong> Saxton</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/Jack5x13.png" alt=""></div><div class="card-back"><h1>Jack Welker</h1><ul><li><strong>Actor Name:</strong> Michael Bowen</li><li><strong>Nickname:</strong> Uncle Jack</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/BCS_S4_Kim_Wexler.jpg" alt=""></div><div class="card-back"><h1>Kimberly Wexler</h1><ul><li><strong>Actor Name:</strong> Rhea Seehorn</li><li><strong>Nickname:</strong> Kim</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/BCS_S4_Howard_Hamlin.jpg" alt=""></div><div class="card-back"><h1>Howard Hamlin</h1><ul><li><strong>Actor Name:</strong> Patrick Fabian</li><li><strong>Nickname:</strong> Howard</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/BCS_S3_ChuckMcGill.jpg" alt=""></div><div class="card-back"><h1>Charles McGill</h1><ul><li><strong>Actor Name:</strong> Michael McKean</li><li><strong>Nickname:</strong> Chuck</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Deceased</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/BCS_S4_Nacho_Varga.jpg" alt=""></div><div class="card-back"><h1>Ignacio Varga</h1><ul><li><strong>Actor Name:</strong> Michael Mano</li><li><strong>Nickname:</strong> Nacho</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div><div class="card"><div class="card-inner"><div class="card-front"><img src="./Breaking Bad API_files/LaloProfileBCS.png" alt=""></div><div class="card-back"><h1>Eduardo Salamanca</h1><ul><li><strong>Actor Name:</strong> Tony Dalton</li><li><strong>Nickname:</strong> Lalo</li><li><strong>Birthday:</strong> Unknown</li><li><strong>Status:</strong> Alive</li></ul></div></div></div></section></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./Breaking Bad API_files/bundle.js"></script><script src="./Breaking Bad API_files/vendors_main.chunk.js"></script><script src="./Breaking Bad API_files/main.chunk.js"></script>
+
+</body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container></html>
